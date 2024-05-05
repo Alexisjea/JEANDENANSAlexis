@@ -1,16 +1,20 @@
-import React from 'react';
-import { CssBaseline, Box } from '@mui/material';
+import React, {useEffect} from 'react';
+import { CssBaseline, Box, Grid } from '@mui/material';
 import Header from './components/pages/Home/Header';
 import Footer from './components/pages/Home/Footer';
-import About from './components/pages/About/About';
+import Home from './components/pages/Home/Home';
 import StatsCard from './components/pages/Home/StatsCard';
 
 function App() {
+  useEffect(() => {
+    document.title = "Portfolio de JEANDENANS Alexis";
+  }, []);
   return (
-     <Box sx={{
-      minHeight: '80vh', // Assurez que l'image couvre toute la hauteur de la vue
-       width: '100%', // Assurez que l'image couvre toute la largeur de la vue
-       background: 'url("/paysage.jpg") no-repeat center center fixed', // Utilisez le chemin correct vers votre image
+    <Grid item xs={12} sm={6} md={4} >
+     <Box  sx={{
+      minHeight: '80vh', 
+       width: '100%', 
+       background: 'url("/paysage.jpg") no-repeat center center fixed', 
        backgroundSize: 'cover',
        margin:0,
        padding:0,
@@ -20,12 +24,13 @@ function App() {
       <CssBaseline />
       
       <Header />
-      <About/>  
-      <StatsCard/>
+      <Home/>  
+      
       <Footer/>
       </>
      
      </Box>
+     </Grid>
   );
 }
 

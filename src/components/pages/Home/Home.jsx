@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StatsCard from '../Home/StatsCard';
-import { Typography, Link } from '@mui/material';
+import { Typography } from '@mui/material';
 import DesignBlocks from '../About/DesignBlocks';
 import SkillsChart from '../Resume/SkillsChart';
 
@@ -30,20 +30,18 @@ export default function Home() {
                     <StatsCard/>    
                 </Box>
                 <Box sx={{ flexGrow: 1, padding: 4 }}>
-                <Typography variant="h3" component="h3" sx={{
+                <Typography variant="h3" component="h3" 
+                  sx={{
                     WebkitTextFillColor: 'transparent',
                     WebkitBackgroundClip: 'text',
                     backgroundImage: 'linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232))', 
                     fontSize: '3rem',
                     fontWeight: 'bold',
                     marginBottom:'60px',
-                    
-                
-                }}align='center'   ><h3 id='skills'>Skills</h3></Typography>
-                    <Grid container spacing={4}>
-                            <SkillsChart/>
-                            
-                    </Grid>
+                  }}align='center'>
+                    <h3 id='skills'>Skills</h3>
+                </Typography>
+                  <Grid container spacing={4}><SkillsChart/> </Grid>
                 </Box>
                 
                 <Typography variant="h3" component="h3" sx={{

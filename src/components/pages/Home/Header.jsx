@@ -48,7 +48,6 @@ function Header() {
     <Grid item xs={12}>
       <AppBar  sx={{
         width: {xs:'100%' , md:'50%'},
-        
         transform: {md:'translateX(-50%)'},
         backgroundColor: bgColor,
         color: color,
@@ -95,9 +94,6 @@ function Header() {
             <MenuItem onClick={() => { handleClose(); onClick(); }}>About</MenuItem>
             <MenuItem onClick={() => { handleClose(); onClick1(); }}>Skills</MenuItem>
             <MenuItem onClick={() => { handleClose(); onClick2(); }}>Projects</MenuItem>
-            <MenuItem><Button color="primary" variant="contained" sx={{ borderRadius: "10px", backgroundImage: 'linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232)', letterSpacing: '0.02857em', marginLeft: 2 }}>
-            Contact
-          </Button></MenuItem>
           </Menu>
           
         </Toolbar>

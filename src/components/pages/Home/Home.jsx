@@ -2,12 +2,10 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import StatsCard from '../Home/StatsCard';
 import { Typography } from '@mui/material';
-import DesignBlocks from '../About/DesignBlocks';
 import SkillsChart from '../Resume/SkillsChart';
-
-
+import About from '../About/About';
+import Projects from '../Projects/Projects';
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
@@ -19,31 +17,32 @@ export default function Home() {
           <ThemeProvider theme={theme}>
             <Box sx={{bgcolor: 'background.default',}}>
                 <Box
-                sx={{
-                    p: 2,
-                    borderRadius: 2,    
-                    display: 'flex',
-                    gridTemplateColumns: { md: '1fr 1fr' },
-                    gap: 2,
-                }}
+                  sx={{
+                      p: 2,
+                      borderRadius: 2,    
+                      display: 'flex',
+                      gridTemplateColumns: { md: '1fr 1fr' },
+                      gap: 2,
+                  }}
                 >   
-                    <StatsCard/>    
+                  <About/>    
                 </Box>
                 <Box sx={{ flexGrow: 1, padding: 4 }}>
-                <Typography variant="h3" component="h3" 
-                  sx={{
-                    WebkitTextFillColor: 'transparent',
-                    WebkitBackgroundClip: 'text',
-                    backgroundImage: 'linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232))', 
-                    fontSize: '3rem',
-                    fontWeight: 'bold',
-                    marginBottom:'60px',
-                  }}align='center'>
-                    <h3 id='skills'>Skills</h3>
-                </Typography>
-                  <Grid container spacing={4}><SkillsChart/> </Grid>
+                  <Typography variant="h3" component="h3" 
+                    sx={{
+                      WebkitTextFillColor: 'transparent',
+                      WebkitBackgroundClip: 'text',
+                      backgroundImage: 'linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232))', 
+                      fontSize: '3rem',
+                      fontWeight: 'bold',
+                      marginBottom:'60px',
+                    }}align='center'>
+                      <h3 id='skills'>Skills</h3>
+                  </Typography>
+                  <Grid container spacing={4}>
+                    <SkillsChart/> 
+                  </Grid>
                 </Box>
-                
                 <Typography variant="h3" component="h3" sx={{
                     WebkitTextFillColor: 'transparent',
                     WebkitBackgroundClip: 'text',
@@ -51,15 +50,10 @@ export default function Home() {
                     fontSize: '3rem',
                     fontWeight: 'bold',
                     marginBottom:'60px',
-                    
-                
-                }}align='center'   ><h3 id='projects'>Projects</h3> </Typography>
-                    
-                            <DesignBlocks/>
-                            
-
-                
-                
+                }}align='center'   >
+                  <h3 id='projects'>Projects</h3> 
+                </Typography>
+                  <Projects/>
             </Box>
           </ThemeProvider>
         </Grid>

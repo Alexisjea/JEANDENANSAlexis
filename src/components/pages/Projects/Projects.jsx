@@ -43,7 +43,7 @@ const FlipCardBack = styled(CardFace)({
   transform: 'rotateY(180deg)',
 });
 
-function DesignBlocks() {
+function Projects() {
   const [open, setOpen] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState('');
    const blocks = [
@@ -114,4 +114,4 @@ function DesignBlocks() {
   );
 }
 
-export default DesignBlocks;
+export default Projects;

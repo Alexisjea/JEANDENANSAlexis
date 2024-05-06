@@ -3,7 +3,7 @@ import { CssBaseline, Box, Grid } from '@mui/material';
 import Header from './components/pages/Home/Header';
 import Footer from './components/pages/Home/Footer';
 import Home from './components/pages/Home/Home';
-import StatsCard from './components/pages/Home/StatsCard';
+
 
 function App() {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grid, Typography, Button, Dialog , Paper} from '@mui/material';
+import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import { styled } from '@mui/system';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Carousel from 'react-material-ui-carousel'; // Assurez-vous d'installer ce package
@@ -19,6 +19,7 @@ const FlipCardInner = styled('div')(({ theme }) => ({
   transition: 'transform 0.6s',
   transformStyle: 'preserve-3d',
   boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+  borderRadius: '20px',
   '&:hover': {
     transform: 'rotateY(180deg)',
   },
@@ -29,18 +30,24 @@ const CardFace = styled('div')({
   width: '100%',
   height: '100%',
   backfaceVisibility: 'hidden',
+  borderRadius: '20px',
 });
 
 const FlipCardFront = styled(CardFace)({
   backgroundColor: '#bbb',
   color: 'black',
-  opacity: '0.8'
+  opacity: '0.8',
+  borderRadius: '20px'
 });
 
 const FlipCardBack = styled(CardFace)({
-  backgroundColor: 'black',
+
   color: 'white',
   transform: 'rotateY(180deg)',
+  backgroundImage: 'linear-gradient(195deg, rgba(73, 163, 241,0.8), rgba(26, 115, 232,0.8))', 
+  borderRadius: '20px',
+  boxShadow:'0.2',
+  
 });
 
 function Projects() {
@@ -48,18 +55,22 @@ function Projects() {
   const [selectedTitle, setSelectedTitle] = useState('');
    const blocks = [
     
-    { title: "GSS", annee: "Mars 2022", imageUrl: "/img/appGretaHome.png" },
-    { title: "GSS", annee: "Mars 2022", imageUrl: "/img/appGretaLogin.png" },
-    { title: "Jangular", annee: "Decembre 2023", imageUrl: "/img/jangularLogin.png" },
-    { title: "Jangular", annee: "Decembre 2023", imageUrl: "/img/jangularRegister.png" },
-    { title: "Jangular", annee: "Decembre 2023", imageUrl: "/img/jangularproducts.png" },
-    { title: "Umans", annee: "Mars 2024", imageUrl: "/img/umansLogin.png" },
-    { title: "Umans", annee: "Mars 2024", imageUrl: "/img/umanRegister.png" },
-    { title: "Umans", annee: "Mars 2024", imageUrl: "/img/umansProducts.png" },
-    { title: "Umans", annee: "Mars 2024", imageUrl: "/img/umansHome.png" },
-    { title: "Portfolio", annee: "Mai 2024", imageUrl: "/img/portfolioAbout.png" },
-    { title: "Portfolio", annee: "Mai 2024", imageUrl: "/img/portfolioSkills.png" },
-    { title: "Portfolio", annee: "Mai 2024", imageUrl: "/img/portfolioProjects.png" },  
+    { title: "GSS",
+    description:"Application developpée en Java (spring boot et pour l'interface j'ai utilisé thymeleaf)", 
+    annee: "Mars 2022", imageUrl: "/img/appGretaHome.png" },
+    { title: "GSS",description:"", annee: "Mars 2022", imageUrl: "/img/appGretaLogin.png" },
+    { title: "Jangular",
+    description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", 
+    annee: "Decembre 2023", imageUrl: "/img/jangularLogin.png" },
+    { title: "Jangular",description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", annee: "Decembre 2023", imageUrl: "/img/jangularRegister.png" },
+    { title: "Jangular",description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", annee: "Decembre 2023", imageUrl: "/img/jangularproducts.png" },
+    { title: "Umans", description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js",annee: "Mars 2024", imageUrl: "/img/umansLogin.png" },
+    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umanRegister.png" },
+    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umansProducts.png" },
+    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umansHome.png" },
+    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioAbout.png" },
+    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioSkills.png" },
+    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioProjects.png" },  
   ];
   const blocksUnique = blocks.reduce((acc, current) => {
     const x = acc.find(item => item.title === current.title);
@@ -90,9 +101,10 @@ function Projects() {
                   <img src={block.imageUrl} alt={block.title} style={{ width: '100%', height: '300px' }} />
                 </FlipCardFront>
                 <FlipCardBack>
-                  <Typography variant="h5" sx={{marginTop:'20px'}} color="primary">{block.title}</Typography>
-                  <Typography variant="h5" sx={{marginTop:'40px'}} color="primary">{block.annee}</Typography>
-                  <Button onClick={() => handleClickOpen(block.title)} sx={{marginTop:'60px'}} color="primary" variant="contained" startIcon={<VisibilityIcon />}>
+                  <Typography variant="h4" sx={{marginTop:'10px'}} >{block.annee}:  </Typography>
+                  <Typography variant="h5" sx={{marginTop:'10px'}} >{block.title}</Typography>
+                  <Typography variant="h5" sx={{marginTop:'10px'}} >{block.description}</Typography>
+                  <Button onClick={() => handleClickOpen(block.title)} sx={{marginTop:'50px'}} color="primary" variant="contained" startIcon={<VisibilityIcon />}>
                     Voir plus
                   </Button>
                 </FlipCardBack>
@@ -102,14 +114,15 @@ function Projects() {
         ))}
       </Grid>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <Carousel>
-          {blocks.filter(block => block.title === selectedTitle)
-                 .map((block, index) => (
-            <img key={index} src={block.imageUrl} alt={block.title} style={{ width: '100%', height: 'auto' }} />
-          ))}
-        </Carousel>
-        <Paper></Paper>
-      </Dialog>
+    
+          <Carousel>
+            {blocks.filter(block => block.title === selectedTitle)
+                   .map((block, index) => (
+              <img key={index} src={block.imageUrl} alt={block.title} style={{ width: '100%', height: 'auto' }} />
+            ))}
+          </Carousel>
+      
+    </Dialog>
     </Box>
   );
 }

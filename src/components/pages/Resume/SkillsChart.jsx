@@ -23,7 +23,7 @@ const valueFormatter = (value) => `${value}%`;
 export default function SkillsChart(){
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md')) || (window.innerWidth === 1024 && window.innerHeight === 1366);
 
   const style = isTablet ? { margin: '30px' } : { margin: '50px' };
   const barSize = isTablet ? 25 : isMobile ? 30 : 20;
@@ -52,6 +52,10 @@ export default function SkillsChart(){
           }}
           barSize={barSize}
           barGap={barGap}
+          animation={{
+            duration: 500,
+            easing: 'easeOutCubic'
+          }}
         />
       ) : (
        
@@ -62,7 +66,7 @@ export default function SkillsChart(){
               yAxis={[{ scaleType: 'band', dataKey: 'language' }]}
               series={[{ dataKey: 'score', label: 'Skills', valueFormatter }]}
               layout="horizontal"
-              width={isTablet ? 700 : 1200} 
+              width={isTablet ? 600 : 1200} 
               height={isTablet ? 600 : 700} 
               margin={{
                 left: 142,
@@ -77,6 +81,10 @@ export default function SkillsChart(){
               }}
               barSize={barSize}
               barGap={barGap}
+              animation={{
+                duration: 20,
+                easing: 'easeOutCubic'
+              }}
             />
           </Grid>
         </Grid>

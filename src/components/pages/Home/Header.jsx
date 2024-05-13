@@ -16,14 +16,14 @@ function Header() {
   };
 
   const [bgColor, setBgColor] = useState('rgba(255, 255, 255, 0.8)');
-  const [color, setColor] = useState('rgba(255, 255, 255, 0.8)');
+  const [color, setColor] = useState('rgba(0, 0, 0, 0.8)');
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
-        setBgColor('black');
+        setBgColor('rgba(0, 0, 0, 0.8)');
         setColor('white');
       } else {
         setBgColor('rgba(255, 255, 255, 0.8)');

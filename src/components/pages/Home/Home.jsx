@@ -14,7 +14,9 @@ export default function Home() {
 
   const {t} = useTranslation();
 
-  return (<><Box
+  return (
+  <>
+  <Box
                   sx={{
                       p: 2,
                       borderRadius: 2,    
@@ -27,7 +29,7 @@ export default function Home() {
                 >   
                   <About/>    
                 </Box>
-     <Grid container spacing={2} justifyContent="center" sx={{marginTop:'200px', bgcolor: 'background.default'}}>
+     <Grid  justifyContent="center" sx={{marginTop:'200px', bgcolor: 'background.default'}}>
       {[lightTheme].map((theme, index) => (
         <Grid item xs={11} key={index} >
           <ThemeProvider theme={theme}>
@@ -59,7 +61,9 @@ export default function Home() {
                 }}align='center'   >
                   <h3 id='projects'>{t('Projects')}</h3> 
                 </Typography>
-                <Box sx={{backgroundColor:'#000000',borderRadius:'3 5px', height:'800px', p:3}}><Projects/></Box>
+                <Box sx={{backgroundColor:'#000000',borderRadius:'3 5px', height:{sm:'1600px',md:'400px'}, p:3}}>
+                  <Projects/>
+                </Box>
                   
                 </Box>
             </Box>

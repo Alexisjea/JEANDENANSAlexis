@@ -48,7 +48,7 @@ function Header() {
   };
 
   return (
-    <Grid item xs={12}>
+   
       <AppBar  sx={{
         width: {xs:'100%' , md:'50%'},
         transform: {md:'translateX(-50%)'},
@@ -103,7 +103,7 @@ function Header() {
           
         </Toolbar>
       </AppBar>
-    </Grid>
+ 
     
   );
 }

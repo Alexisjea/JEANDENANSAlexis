@@ -47,11 +47,12 @@ const FlipCardFront = styled(CardFace)({
 });
 
 const FlipCardBack = styled(CardFace)({
-
+  width: '100%',
+  height: {sm:'600px', md:'100%'},
   color: 'white',
   transform: 'rotateY(180deg)',
 
-  background: 'rgb(2,0,36)',
+ 
   background: 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
   borderRadius: '20px',
   boxShadow:'0.2',
@@ -103,17 +104,17 @@ function Projects() {
     <Box sx={{ flexGrow: 1, padding: 4, display: 'flex', justifyContent: 'center' }}>
       <Grid  container spacing={4} justifyContent="center">
         {blocksUnique.map((block, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <FlipCard>
               <FlipCardInner>
                 <FlipCardFront>
                   <img src={block.imageUrl} alt={block.title} style={{ width: '100%', height: '300px' }} />
                 </FlipCardFront>
-                <FlipCardBack>
+                <FlipCardBack >
                   <Typography variant="h4" sx={{marginTop:'10px'}} >{block.annee}:  </Typography>
                   <Typography variant="h5" sx={{marginTop:'10px'}} >{block.title}</Typography>
-                  <Typography variant="h5" sx={{marginTop:'10px'}} >{block.description}</Typography>
-                  <Button onClick={() => handleClickOpen(block.title)} sx={{marginTop:'50px'}} color="primary" variant="contained" startIcon={<VisibilityIcon />}>
+                  <Typography variant="subtitle1" sx={{marginTop:'10px'}} >{block.description}</Typography>
+                  <Button onClick={() => handleClickOpen(block.title)} sx={{marginTop:{md:'50px',sm:'5px'}}} color="primary" variant="contained" startIcon={<VisibilityIcon />}>
                     {t('see_more')}
                   </Button>
                 </FlipCardBack>

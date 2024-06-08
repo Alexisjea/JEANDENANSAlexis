@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, Grid, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import LanguageSelector from '../LanguageSelection';
+import { useTranslation } from 'react-i18next';
 
 function Header() {
   const onClick = () => {
@@ -19,13 +21,14 @@ function Header() {
   const [color, setColor] = useState('rgba(0, 0, 0, 0.8)');
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const {t} = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
         setBgColor('rgba(0, 0, 0, 0.8)');
         setColor('white');
-      } else {
+      } else  {
         setBgColor('rgba(255, 255, 255, 0.8)');
         setColor('rgb(52, 71, 103)');
       }
@@ -62,9 +65,10 @@ function Header() {
             Portfolio
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
-            <Button onClick={onClick} color="inherit">About</Button>
-            <Button onClick={onClick1} color="inherit">Skills</Button>
-            <Button onClick={onClick2} color="inherit">Projects</Button>
+            <Button onClick={onClick} color="inherit">{t('about_me')}</Button>
+            <Button onClick={onClick1} color="inherit">{t('Skills')}</Button>
+            <Button onClick={onClick2} color="inherit">{t('Projects')}</Button>
+            <LanguageSelector sx={{color: color,backgroundColor: bgColor}}/>
           </Box>
           <IconButton
             size="large"
@@ -91,9 +95,10 @@ function Header() {
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={() => { handleClose(); onClick(); }}>About</MenuItem>
-            <MenuItem onClick={() => { handleClose(); onClick1(); }}>Skills</MenuItem>
-            <MenuItem onClick={() => { handleClose(); onClick2(); }}>Projects</MenuItem>
+            <MenuItem onClick={() => { handleClose(); onClick(); }}>{t('about_me')}</MenuItem>
+            <MenuItem onClick={() => { handleClose(); onClick1(); }}>{t('education')}</MenuItem>
+            <MenuItem onClick={() => { handleClose(); onClick2(); }}>{t('Projects')}</MenuItem>
+            <LanguageSelector sx={{color: color,backgroundColor: bgColor}}/>
           </Menu>
           
         </Toolbar>

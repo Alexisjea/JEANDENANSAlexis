@@ -14,7 +14,7 @@ function App() {
      <Box  sx={{
       minHeight: '80vh', 
        width: '100%', 
-       background: 'url("/paysage.jpg") no-repeat center center fixed', 
+      background : 'url("/paysage.jpg") no-repeat center center fixed', 
        backgroundSize: 'cover',
        margin:0,
        padding:0,

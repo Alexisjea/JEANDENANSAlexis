@@ -6,28 +6,34 @@ import { Typography } from '@mui/material';
 import SkillsChart from '../Resume/SkillsChart';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
+import { useTranslation } from 'react-i18next';
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
 export default function Home() {
-  return (
-     <Grid container spacing={2} justifyContent="center" sx={{marginTop:'200px'}}>
-      {[lightTheme].map((theme, index) => (
-        <Grid item xs={11} key={index} >
-          <ThemeProvider theme={theme}>
-            <Box sx={{bgcolor: 'background.default',}}>
-                <Box
+
+  const {t} = useTranslation();
+
+  return (<><Box
                   sx={{
                       p: 2,
                       borderRadius: 2,    
                       display: 'flex',
                       gridTemplateColumns: { md: '1fr 1fr' },
                       gap: 2,
+                      marginTop:'80px',
+                      opacity:0.9
                   }}
                 >   
                   <About/>    
                 </Box>
-                <Box sx={{ flexGrow: 1, padding: 4 }}>
+     <Grid container spacing={2} justifyContent="center" sx={{marginTop:'200px', bgcolor: 'background.default'}}>
+      {[lightTheme].map((theme, index) => (
+        <Grid item xs={11} key={index} >
+          <ThemeProvider theme={theme}>
+            <Box >
+                
+                <Box sx={{ flexGrow: 1, padding: 4 }} >
                   <Typography variant="h3" component="h3" 
                     sx={{
                       WebkitTextFillColor: 'transparent',
@@ -37,12 +43,12 @@ export default function Home() {
                       fontWeight: 'bold',
                       marginBottom:'60px',
                     }}align='center'>
-                      <h3 id='skills'>Skills</h3>
+                      <h3 id='skills'>{t('Skills')}</h3>
                   </Typography>
                   <Grid container spacing={4}>
                     <SkillsChart/> 
                   </Grid>
-                </Box>
+                
                 <Typography variant="h3" component="h3" sx={{
                     WebkitTextFillColor: 'transparent',
                     WebkitBackgroundClip: 'text',
@@ -51,13 +57,15 @@ export default function Home() {
                     fontWeight: 'bold',
                     marginBottom:'60px',
                 }}align='center'   >
-                  <h3 id='projects'>Projects</h3> 
+                  <h3 id='projects'>{t('Projects')}</h3> 
                 </Typography>
-                  <Projects/>
+                <Box sx={{backgroundColor:'#000000',borderRadius:'3 5px', height:'800px', p:3}}><Projects/></Box>
+                  
+                </Box>
             </Box>
           </ThemeProvider>
         </Grid>
       ))}
-    </Grid>
+    </Grid></>
   );
 }

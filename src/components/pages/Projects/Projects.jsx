@@ -3,12 +3,17 @@ import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import { styled } from '@mui/system';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Carousel from 'react-material-ui-carousel'; // Assurez-vous d'installer ce package
+import { useTranslation } from 'react-i18next';
 
 const FlipCard = styled('div')({
   backgroundColor: 'transparent',
   width: {xs:'300px',md:'400px'},
   height: '300px',
   perspective: '1000px',
+  '&:hover': {
+    transform: 'scale(1.15)',
+    
+  },
 });
 
 const FlipCardInner = styled('div')(({ theme }) => ({
@@ -16,11 +21,12 @@ const FlipCardInner = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
   textAlign: 'center',
-  transition: 'transform 0.6s',
+  transition: 'transform 0.6s ease-in-out',
   transformStyle: 'preserve-3d',
-  boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-  borderRadius: '20px',
+  boxShadow: '0 4px 8px 0 rgba(0,0,0,0.1)',
+  borderRadius: '25px',
   '&:hover': {
+   
     transform: 'rotateY(180deg)',
   },
 }));
@@ -44,7 +50,9 @@ const FlipCardBack = styled(CardFace)({
 
   color: 'white',
   transform: 'rotateY(180deg)',
-  backgroundImage: 'linear-gradient(195deg, rgba(73, 163, 241,0.8), rgba(26, 115, 232,0.8))', 
+
+  background: 'rgb(2,0,36)',
+  background: 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
   borderRadius: '20px',
   boxShadow:'0.2',
   
@@ -53,6 +61,7 @@ const FlipCardBack = styled(CardFace)({
 function Projects() {
   const [open, setOpen] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState('');
+  const {t} = useTranslation();
    const blocks = [
     
     { title: "GSS",
@@ -91,7 +100,7 @@ function Projects() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 4, backgroundColor: '#fff', display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ flexGrow: 1, padding: 4, display: 'flex', justifyContent: 'center' }}>
       <Grid  container spacing={4} justifyContent="center">
         {blocksUnique.map((block, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -105,7 +114,7 @@ function Projects() {
                   <Typography variant="h5" sx={{marginTop:'10px'}} >{block.title}</Typography>
                   <Typography variant="h5" sx={{marginTop:'10px'}} >{block.description}</Typography>
                   <Button onClick={() => handleClickOpen(block.title)} sx={{marginTop:'50px'}} color="primary" variant="contained" startIcon={<VisibilityIcon />}>
-                    Voir plus
+                    {t('see_more')}
                   </Button>
                 </FlipCardBack>
               </FlipCardInner>

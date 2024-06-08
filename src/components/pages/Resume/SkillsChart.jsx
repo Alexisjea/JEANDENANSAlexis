@@ -1,8 +1,11 @@
-import * as React from 'react';
+import  React  from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTranslation } from 'react-i18next';
+
+
 
 const dataset = [
   {score: 61, language: 'ExpressJs'},
@@ -24,18 +27,20 @@ export default function SkillsChart(){
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md')) || (window.innerWidth === 1024 && window.innerHeight === 1366);
-
   const style = isTablet ? { margin: '30px' } : { margin: '50px' };
   const barSize = isTablet ? 25 : isMobile ? 30 : 20;
   const barGap = isTablet ? 10 : isMobile ? 15 : 5;
+  const {t} = useTranslation();
+  
 
   return (
     <>
+    
       {isMobile ? (
         <BarChart
           dataset={dataset}
           yAxis={[{ scaleType: 'band', dataKey: 'language' }]}
-          series={[{ dataKey: 'score', label: 'Skills', valueFormatter }]}
+          series={[{ dataKey: 'score', label:  t('Skills'), valueFormatter }]}
           layout="horizontal"
           width={400}
           height={1000}
@@ -64,7 +69,7 @@ export default function SkillsChart(){
             <BarChart
               dataset={dataset}
               yAxis={[{ scaleType: 'band', dataKey: 'language' }]}
-              series={[{ dataKey: 'score', label: 'Skills', valueFormatter }]}
+              series={[{ dataKey: 'score', label: t('Skills'), valueFormatter }]}
               layout="horizontal"
               width={isTablet ? 600 : 1200} 
               height={isTablet ? 600 : 700} 

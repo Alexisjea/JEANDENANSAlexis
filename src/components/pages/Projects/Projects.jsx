@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import { styled } from '@mui/system';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import Carousel from 'react-material-ui-carousel'; // Assurez-vous d'installer ce package
+import Carousel from 'react-material-ui-carousel';
 import { useTranslation } from 'react-i18next';
 
 const FlipCard = styled('div')({

@@ -8,6 +8,25 @@
   "skills":"skills",
   "Skills":"Skills",
   "see_more": "see more",
-  "See_more": "See more"
+  "See_more": "See more",
+  "years":"years",
+  "Years":"Years",
+  "development_since_2021": "I have been practicing development since 2021 starting with Symfony",
+  "master_2_year": "And yes, currently I am in the 2nd year of my master's and preparing for the professional title:",
+  "expert_title": "Expert in engineering and information systems, specializing in Big Data and AI development",
+  "github_repositories": "Are on GitHub, including public and private repositories",
+  "december":"december",  
+  "December":"December",
+  "may":"may",
+  "May":"May",
+  "march":"march",
+  "March":"March",
+  "angular_app_description": "Application developed in Angular and the Material Angular UI framework connected to an API in Express.js",
+  "react_app_description": "Application developed in React and the MaterialUI framework connected to an API in Express.js",
+  "java_app_description": "Application developed in Java (Spring Boot and Thymeleaf for the interface)",
+  "react_materialui_app_description": "Application developed in React and the MaterialUI framework"
+
+  
+
 
 }

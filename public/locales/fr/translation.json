@@ -8,5 +8,22 @@
   "skills":"compétences",
   "Skills":"Compétences",
   "see_more": "voir plus",
-  "See_more": "Voir plus"
+  "See_more": "Voir plus",
+  "years":"années",
+  "Years":"Années",
+  "master_2_year": "Et oui actuellement je suis en 2e année de master et je prépare le titre professionnel :",
+  "development_since_2021": "J'ai pratiqué depuis 2021 dans le développement en commançant par symfony",
+  "expert_title": "Expert en ingénierie et systèmes d'informations option Dev BigData et IA",
+  "github_repositories": "Sont sur GitHub incluant les repository publics et privés",
+  "december":"decembre",  
+  "December":"Decembre",
+  "may":"mai",
+  "May":"Mai",
+  "march":"mars",
+  "March":"Mars",
+  "angular_app_description": "Application développée en Angular et le framework UI Material angular connecté à une API en Express.js",
+  "react_app_description": "Application développée en React et le framework UI MaterialUI connecté à une API en Express.js",
+  "java_app_description": "Application développée en Java (Spring Boot et pour l'interface j'ai utilisé Thymeleaf)",
+  "react_materialui_app_description": "Application développée en React et le framework UI MaterialUI"
+
 }

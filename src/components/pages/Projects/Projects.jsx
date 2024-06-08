@@ -65,22 +65,18 @@ function Projects() {
   const {t} = useTranslation();
    const blocks = [
     
-    { title: "GSS",
-    description:"Application developpée en Java (spring boot et pour l'interface j'ai utilisé thymeleaf)", 
-    annee: "Mars 2022", imageUrl: "/img/appGretaHome.png" },
-    { title: "GSS",description:"", annee: "Mars 2022", imageUrl: "/img/appGretaLogin.png" },
-    { title: "Jangular",
-    description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", 
-    annee: "Decembre 2023", imageUrl: "/img/jangularLogin.png" },
-    { title: "Jangular",description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", annee: "Decembre 2023", imageUrl: "/img/jangularRegister.png" },
-    { title: "Jangular",description:"Appliacation developpée en Angular et le framework UI Material angular connecté a une API en Express.js", annee: "Decembre 2023", imageUrl: "/img/jangularproducts.png" },
-    { title: "Umans", description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js",annee: "Mars 2024", imageUrl: "/img/umansLogin.png" },
-    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umanRegister.png" },
-    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umansProducts.png" },
-    { title: "Umans",description:"Appliacation developpée en React et le framework UI MaterialUI connecté a une API en Express.js", annee: "Mars 2024", imageUrl: "/img/umansHome.png" },
-    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioAbout.png" },
-    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioSkills.png" },
-    { title: "Portfolio",description:"Appliacation developpée en React et le framework UI MaterialUI ", annee: "Mai 2024", imageUrl: "/img/portfolioProjects.png" },  
+    { title: "GSS",description:t('java_app_description'),annee:t('March')+' ' +2022, imageUrl: "/img/appGretaHome.png" },
+    { title: "GSS",description:t('java_app_description'), annee: t('March')+' ' +2022, imageUrl: "/img/appGretaLogin.png" },
+    { title: "Jangular",description:t('angular_app_description'),annee: t('December')+' ' +2023, imageUrl: "/img/jangularLogin.png" },
+    { title: "Jangular",description:t('angular_app_description'),annee: t('December')+' ' +2023, imageUrl: "/img/jangularRegister.png" },
+    { title: "Jangular",description:t('angular_app_description'),annee: t('December')+' ' +2023, imageUrl: "/img/jangularproducts.png" },
+    { title: "Umans", description:t('react_app_description'),annee: t('March')+' ' +2024, imageUrl: "/img/umansLogin.png" },
+    { title: "Umans",description:t('react_app_description'), annee: t('March')+' ' +2024, imageUrl: "/img/umanRegister.png" },
+    { title: "Umans",description:t('react_app_description'), annee: t('March')+' ' +2024, imageUrl: "/img/umansProducts.png" },
+    { title: "Umans",description:t('react_app_description'), annee: t('March')+' ' +2024, imageUrl: "/img/umansHome.png" },
+    { title: "Portfolio",description:t('react_materialui_app_description'), annee: t('May')+' ' +2024, imageUrl: "/img/portfolioAbout.png" },
+    { title: "Portfolio",description:t('react_materialui_app_description'), annee: t('May')+' ' +2024, imageUrl: "/img/portfolioSkills.png" },
+    { title: "Portfolio",description:t('react_materialui_app_description'), annee: t('May')+' ' +2024, imageUrl: "/img/portfolioProjects.png" },  
   ];
   const blocksUnique = blocks.reduce((acc, current) => {
     const x = acc.find(item => item.title === current.title);

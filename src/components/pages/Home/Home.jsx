@@ -61,7 +61,7 @@ export default function Home() {
                 }}align='center'   >
                   <h3 id='projects'>{t('Projects')}</h3> 
                 </Typography>
-                <Box sx={{backgroundColor:'#000000',borderRadius:'3 5px', height:{sm:'1600px',md:'400px'}, p:3}}>
+                <Box sx={{backgroundColor:'#000000',borderRadius:'35px', height:{sm:'1600px',md:'400px'}, p:3}}>
                   <Projects/>
                 </Box>
                   

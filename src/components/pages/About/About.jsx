@@ -39,7 +39,7 @@ export default function About() {
               {t('education')}
             </Typography>
             <Typography sx={{marginTop:'20px'}} variant="subtitle1">
-              Et oui actuellement je suis en 2e année de master et je prépare le titre professionnel :
+              {t('master_2_year')}
             </Typography>
             <Typography variant="h3" component="h3" sx={{
                 WebkitTextFillColor: 'transparent',
@@ -49,7 +49,7 @@ export default function About() {
                 fontWeight: 'bold',
                 marginTop:'20px'
                 }}  >
-             Expert en ingénierie et systèmes d'informations option Dev BigData et IA
+             {t('expert_title')}
             </Typography>
           </Container>
         </Grid>
@@ -67,7 +67,7 @@ export default function About() {
               {t('years_experience')}
             </Typography>
             <Typography sx={{marginTop:'20px'}}  variant="subtitle1">
-              J'ai pratiqué depuis 2021 dans le développement en commançant par symfony 
+              {t('development_since_2021')}
             </Typography>
             
           </Container>
@@ -89,7 +89,7 @@ export default function About() {
               {t('repositories')}
             </Typography>
             <Typography>
-              Sont sur gitHub incluant les repository publiques et privé 
+              {t('github_repositories')}
             </Typography>
           </Container>
         </Grid>
